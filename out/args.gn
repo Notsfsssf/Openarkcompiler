@@ -1,0 +1,4 @@
+GN_INSTALL_PREFIX = "/var/OpenArkCompiler"
+GN_BUILD_TYPE = "RELEASE"
+HOST_ARCH = 64
+MIR_JAVA = 1

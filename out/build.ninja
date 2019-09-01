@@ -1,0 +1,43 @@
+rule gn
+  command = /var/OpenArkCompiler/tools/gn --root=/var/OpenArkCompiler -q gen .
+  description = Regenerating ninja files
+
+build build.ninja: gn
+  generator = 1
+  depfile = build.ninja.d
+
+subninja toolchain.ninja
+
+build maple: phony obj/maple.stamp
+build libHWSecureC: phony lib/64/libHWSecureC.a
+build libmpl2mpl: phony lib/64/libmpl2mpl.a
+build libmplipa: phony lib/64/libmplipa.a
+build libmplir: phony lib/64/libmplir.a
+build libmplme: phony lib/64/libmplme.a
+build libmplmewpo: phony /var/OpenArkCompiler/out/lib/libmplmewpo.a
+build libz_maple_host: phony lib/64/libz_maple_host.a
+build mapleall: phony obj/ABS_PATH/var/OpenArkCompiler/src/mapleall.stamp
+build $:maple: phony obj/maple.stamp
+build var/OpenArkCompiler/src$:mapleall: phony obj/ABS_PATH/var/OpenArkCompiler/src/mapleall.stamp
+build var/OpenArkCompiler/src/huawei_secure_c$:libHWSecureC: phony lib/64/libHWSecureC.a
+build var/OpenArkCompiler/src/maple_driver$:maple: phony /var/OpenArkCompiler/out/bin/maple
+build var/OpenArkCompiler/src/maple_ipa$:libmplipa: phony lib/64/libmplipa.a
+build var/OpenArkCompiler/src/maple_ir$:libmplir: phony lib/64/libmplir.a
+build var/OpenArkCompiler/src/maple_me$:libmplme: phony lib/64/libmplme.a
+build var/OpenArkCompiler/src/maple_me$:libmplmewpo: phony /var/OpenArkCompiler/out/lib/libmplmewpo.a
+build var/OpenArkCompiler/src/mpl2mpl$:libmpl2mpl: phony lib/64/libmpl2mpl.a
+build var/OpenArkCompiler/src/third_party/zlib-1.2.11$:libz_maple_host: phony lib/64/libz_maple_host.a
+
+build all: phony $
+    obj/maple.stamp $
+    obj/ABS_PATH/var/OpenArkCompiler/src/mapleall.stamp $
+    lib/64/libHWSecureC.a $
+    /var/OpenArkCompiler/out/bin/maple $
+    lib/64/libmplipa.a $
+    lib/64/libmplir.a $
+    lib/64/libmplme.a $
+    /var/OpenArkCompiler/out/lib/libmplmewpo.a $
+    lib/64/libmpl2mpl.a $
+    lib/64/libz_maple_host.a
+
+default all

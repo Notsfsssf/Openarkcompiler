@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../src -I../src/maple_driver/defs -I../src/maple_driver/include -I../src/maple_util/include -I../src/mpl2mpl/include -I../src/maple_me/include -I../src/maplewpo/include -I../src/maple_ipa/include -I../src/maple_phase/include -I../src/maplecomb/include -I../src/maple_util/include -I../src/maple_ir/include -I../src/maple_me/include -I../src/mempool/include -I../src/huawei_secure_c/include
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -DTARGAARCH64 -DMAPLE_ROOT=\"/var/OpenArkCompiler\" -DOPTION_PARSER_EXTRAOPT -std=c++11 -Werror
+target_output_name = maple
+
+build obj/src/maple_driver/src/maple.compiler.o: cxx ../src/maple_driver/src/compiler.cpp
+build obj/src/maple_driver/src/maple.compiler_factory.o: cxx ../src/maple_driver/src/compiler_factory.cpp
+build obj/src/maple_driver/src/maple.compiler_selector.o: cxx ../src/maple_driver/src/compiler_selector.cpp
+build obj/src/maple_driver/src/maple.driver_runner.o: cxx ../src/maple_driver/src/driver_runner.cpp
+build obj/src/maple_driver/src/maple.file_utils.o: cxx ../src/maple_driver/src/file_utils.cpp
+build obj/src/maple_driver/src/maple.jbc2mpl_compiler.o: cxx ../src/maple_driver/src/jbc2mpl_compiler.cpp
+build obj/src/maple_driver/src/maple.maple.o: cxx ../src/maple_driver/src/maple.cpp
+build obj/src/maple_driver/src/maple.maple_comb_compiler.o: cxx ../src/maple_driver/src/maple_comb_compiler.cpp
+build obj/src/maple_driver/src/maple.mplcg_compiler.o: cxx ../src/maple_driver/src/mplcg_compiler.cpp
+build obj/src/maple_driver/src/maple.mpl_options.o: cxx ../src/maple_driver/src/mpl_options.cpp
+
+build /var/OpenArkCompiler/out/bin/maple: link obj/src/maple_driver/src/maple.compiler.o obj/src/maple_driver/src/maple.compiler_factory.o obj/src/maple_driver/src/maple.compiler_selector.o obj/src/maple_driver/src/maple.driver_runner.o obj/src/maple_driver/src/maple.file_utils.o obj/src/maple_driver/src/maple.jbc2mpl_compiler.o obj/src/maple_driver/src/maple.maple.o obj/src/maple_driver/src/maple.maple_comb_compiler.o obj/src/maple_driver/src/maple.mplcg_compiler.o obj/src/maple_driver/src/maple.mpl_options.o lib/64/libHWSecureC.a lib/64/libmplipa.a lib/64/libmplir.a lib/64/libmplme.a /var/OpenArkCompiler/out/lib/libmplmewpo.a lib/64/libmpl2mpl.a lib/64/libz_maple_host.a | ../src/deplibs/libmplphase.a ../src/deplibs/libmempool.a ../src/deplibs/libmaple_driverutil.a ../src/deplibs/libmplutil.a
+  ldflags = -fPIC -std=c++11 -rdynamic -lpthread -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -fPIE
+  libs = ../src/deplibs/libmplphase.a ../src/deplibs/libmempool.a ../src/deplibs/libmaple_driverutil.a ../src/deplibs/libmplutil.a
+  output_extension = 
+  output_dir = 

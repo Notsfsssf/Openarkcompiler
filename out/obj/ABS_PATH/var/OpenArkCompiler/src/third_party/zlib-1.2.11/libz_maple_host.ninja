@@ -1,0 +1,26 @@
+defines =
+include_dirs = -I../src/third_party/zlib-1.2.11/crc32.h -I../src/third_party/zlib-1.2.11/deflate.h -I../src/third_party/zlib-1.2.11/gzguts.h -I../src/third_party/zlib-1.2.11/inffast.h -I../src/third_party/zlib-1.2.11/inffixed.h -I../src/third_party/zlib-1.2.11/inflate.h -I../src/third_party/zlib-1.2.11/inftrees.h -I../src/third_party/zlib-1.2.11/trees.h -I../src/third_party/zlib-1.2.11/zutil.h
+cflags =
+cflags_c = -O3 -DUSE_MMAP -DZLIB_CONST -DZ_HAVE_UNISTD_H -Wall -Werror -Wno-error=shift-negative-value
+target_output_name = libz_maple_host
+
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.adler32.o: cc ../src/third_party/zlib-1.2.11/adler32.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.compress.o: cc ../src/third_party/zlib-1.2.11/compress.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.crc32.o: cc ../src/third_party/zlib-1.2.11/crc32.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.deflate.o: cc ../src/third_party/zlib-1.2.11/deflate.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.gzclose.o: cc ../src/third_party/zlib-1.2.11/gzclose.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.gzlib.o: cc ../src/third_party/zlib-1.2.11/gzlib.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.gzread.o: cc ../src/third_party/zlib-1.2.11/gzread.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.gzwrite.o: cc ../src/third_party/zlib-1.2.11/gzwrite.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.inflate.o: cc ../src/third_party/zlib-1.2.11/inflate.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.infback.o: cc ../src/third_party/zlib-1.2.11/infback.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.inftrees.o: cc ../src/third_party/zlib-1.2.11/inftrees.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.inffast.o: cc ../src/third_party/zlib-1.2.11/inffast.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.trees.o: cc ../src/third_party/zlib-1.2.11/trees.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.uncompr.o: cc ../src/third_party/zlib-1.2.11/uncompr.c
+build obj/src/third_party/zlib-1.2.11/libz_maple_host.zutil.o: cc ../src/third_party/zlib-1.2.11/zutil.c
+
+build lib/64/libz_maple_host.a: alink obj/src/third_party/zlib-1.2.11/libz_maple_host.adler32.o obj/src/third_party/zlib-1.2.11/libz_maple_host.compress.o obj/src/third_party/zlib-1.2.11/libz_maple_host.crc32.o obj/src/third_party/zlib-1.2.11/libz_maple_host.deflate.o obj/src/third_party/zlib-1.2.11/libz_maple_host.gzclose.o obj/src/third_party/zlib-1.2.11/libz_maple_host.gzlib.o obj/src/third_party/zlib-1.2.11/libz_maple_host.gzread.o obj/src/third_party/zlib-1.2.11/libz_maple_host.gzwrite.o obj/src/third_party/zlib-1.2.11/libz_maple_host.inflate.o obj/src/third_party/zlib-1.2.11/libz_maple_host.infback.o obj/src/third_party/zlib-1.2.11/libz_maple_host.inftrees.o obj/src/third_party/zlib-1.2.11/libz_maple_host.inffast.o obj/src/third_party/zlib-1.2.11/libz_maple_host.trees.o obj/src/third_party/zlib-1.2.11/libz_maple_host.uncompr.o obj/src/third_party/zlib-1.2.11/libz_maple_host.zutil.o
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

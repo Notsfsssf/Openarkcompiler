@@ -1,0 +1,50 @@
+defines =
+include_dirs = -I../src/huawei_secure_c/include -I../src/huawei_secure_c/src
+cflags =
+cflags_c = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64
+target_output_name = libHWSecureC
+
+build obj/src/huawei_secure_c/src/libHWSecureC.vsprintf_s.o: cc ../src/huawei_secure_c/src/vsprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wmemmove_s.o: cc ../src/huawei_secure_c/src/wmemmove_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.strncat_s.o: cc ../src/huawei_secure_c/src/strncat_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vsnprintf_s.o: cc ../src/huawei_secure_c/src/vsnprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.fwscanf_s.o: cc ../src/huawei_secure_c/src/fwscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.scanf_s.o: cc ../src/huawei_secure_c/src/scanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.strcat_s.o: cc ../src/huawei_secure_c/src/strcat_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.sscanf_s.o: cc ../src/huawei_secure_c/src/sscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.secureprintoutput_w.o: cc ../src/huawei_secure_c/src/secureprintoutput_w.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wmemcpy_s.o: cc ../src/huawei_secure_c/src/wmemcpy_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wcsncat_s.o: cc ../src/huawei_secure_c/src/wcsncat_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.secureprintoutput_a.o: cc ../src/huawei_secure_c/src/secureprintoutput_a.c
+build obj/src/huawei_secure_c/src/libHWSecureC.secureinput_w.o: cc ../src/huawei_secure_c/src/secureinput_w.c
+build obj/src/huawei_secure_c/src/libHWSecureC.memcpy_s.o: cc ../src/huawei_secure_c/src/memcpy_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.fscanf_s.o: cc ../src/huawei_secure_c/src/fscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vswscanf_s.o: cc ../src/huawei_secure_c/src/vswscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.secureinput_a.o: cc ../src/huawei_secure_c/src/secureinput_a.c
+build obj/src/huawei_secure_c/src/libHWSecureC.sprintf_s.o: cc ../src/huawei_secure_c/src/sprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.memmove_s.o: cc ../src/huawei_secure_c/src/memmove_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.swscanf_s.o: cc ../src/huawei_secure_c/src/swscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.snprintf_s.o: cc ../src/huawei_secure_c/src/snprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vscanf_s.o: cc ../src/huawei_secure_c/src/vscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vswprintf_s.o: cc ../src/huawei_secure_c/src/vswprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wcscpy_s.o: cc ../src/huawei_secure_c/src/wcscpy_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vfwscanf_s.o: cc ../src/huawei_secure_c/src/vfwscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.memset_s.o: cc ../src/huawei_secure_c/src/memset_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wscanf_s.o: cc ../src/huawei_secure_c/src/wscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vwscanf_s.o: cc ../src/huawei_secure_c/src/vwscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.strtok_s.o: cc ../src/huawei_secure_c/src/strtok_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wcsncpy_s.o: cc ../src/huawei_secure_c/src/wcsncpy_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vfscanf_s.o: cc ../src/huawei_secure_c/src/vfscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.vsscanf_s.o: cc ../src/huawei_secure_c/src/vsscanf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wcstok_s.o: cc ../src/huawei_secure_c/src/wcstok_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.securecutil.o: cc ../src/huawei_secure_c/src/securecutil.c
+build obj/src/huawei_secure_c/src/libHWSecureC.gets_s.o: cc ../src/huawei_secure_c/src/gets_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.swprintf_s.o: cc ../src/huawei_secure_c/src/swprintf_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.strcpy_s.o: cc ../src/huawei_secure_c/src/strcpy_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.wcscat_s.o: cc ../src/huawei_secure_c/src/wcscat_s.c
+build obj/src/huawei_secure_c/src/libHWSecureC.strncpy_s.o: cc ../src/huawei_secure_c/src/strncpy_s.c
+
+build lib/64/libHWSecureC.a: alink obj/src/huawei_secure_c/src/libHWSecureC.vsprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.wmemmove_s.o obj/src/huawei_secure_c/src/libHWSecureC.strncat_s.o obj/src/huawei_secure_c/src/libHWSecureC.vsnprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.fwscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.scanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.strcat_s.o obj/src/huawei_secure_c/src/libHWSecureC.sscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.secureprintoutput_w.o obj/src/huawei_secure_c/src/libHWSecureC.wmemcpy_s.o obj/src/huawei_secure_c/src/libHWSecureC.wcsncat_s.o obj/src/huawei_secure_c/src/libHWSecureC.secureprintoutput_a.o obj/src/huawei_secure_c/src/libHWSecureC.secureinput_w.o obj/src/huawei_secure_c/src/libHWSecureC.memcpy_s.o obj/src/huawei_secure_c/src/libHWSecureC.fscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.vswscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.secureinput_a.o obj/src/huawei_secure_c/src/libHWSecureC.sprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.memmove_s.o obj/src/huawei_secure_c/src/libHWSecureC.swscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.snprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.vscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.vswprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.wcscpy_s.o obj/src/huawei_secure_c/src/libHWSecureC.vfwscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.memset_s.o obj/src/huawei_secure_c/src/libHWSecureC.wscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.vwscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.strtok_s.o obj/src/huawei_secure_c/src/libHWSecureC.wcsncpy_s.o obj/src/huawei_secure_c/src/libHWSecureC.vfscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.vsscanf_s.o obj/src/huawei_secure_c/src/libHWSecureC.wcstok_s.o obj/src/huawei_secure_c/src/libHWSecureC.securecutil.o obj/src/huawei_secure_c/src/libHWSecureC.gets_s.o obj/src/huawei_secure_c/src/libHWSecureC.swprintf_s.o obj/src/huawei_secure_c/src/libHWSecureC.strcpy_s.o obj/src/huawei_secure_c/src/libHWSecureC.wcscat_s.o obj/src/huawei_secure_c/src/libHWSecureC.strncpy_s.o
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

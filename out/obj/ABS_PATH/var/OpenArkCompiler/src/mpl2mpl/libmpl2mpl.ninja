@@ -1,0 +1,21 @@
+defines =
+include_dirs = -I../src/maple_ir/include -I../src/maple_me/include -I../src/maple_ipa/include -I../src/maple_phase/include -I../src/maple_util/include -I../src/mpl2mpl/include -I../src/mempool/include -I../src/huawei_secure_c/include -I../src/third_party/zlib-1.2.11
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -std=c++11 -Werror
+target_output_name = libmpl2mpl
+
+build obj/src/mpl2mpl/src/libmpl2mpl.class_init.o: cxx ../src/mpl2mpl/src/class_init.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.gen_check_cast.o: cxx ../src/mpl2mpl/src/gen_check_cast.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.muid_replacement.o: cxx ../src/mpl2mpl/src/muid_replacement.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.reflection_analysis.o: cxx ../src/mpl2mpl/src/reflection_analysis.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.vtable_analysis.o: cxx ../src/mpl2mpl/src/vtable_analysis.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.java_intrn_lowering.o: cxx ../src/mpl2mpl/src/java_intrn_lowering.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.java_eh_lower.o: cxx ../src/mpl2mpl/src/java_eh_lower.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.native_stub_func.o: cxx ../src/mpl2mpl/src/native_stub_func.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.vtable_impl.o: cxx ../src/mpl2mpl/src/vtable_impl.cpp
+build obj/src/mpl2mpl/src/libmpl2mpl.class_hierarchy.o: cxx ../src/mpl2mpl/src/class_hierarchy.cpp
+
+build lib/64/libmpl2mpl.a: alink obj/src/mpl2mpl/src/libmpl2mpl.class_init.o obj/src/mpl2mpl/src/libmpl2mpl.gen_check_cast.o obj/src/mpl2mpl/src/libmpl2mpl.muid_replacement.o obj/src/mpl2mpl/src/libmpl2mpl.reflection_analysis.o obj/src/mpl2mpl/src/libmpl2mpl.vtable_analysis.o obj/src/mpl2mpl/src/libmpl2mpl.java_intrn_lowering.o obj/src/mpl2mpl/src/libmpl2mpl.java_eh_lower.o obj/src/mpl2mpl/src/libmpl2mpl.native_stub_func.o obj/src/mpl2mpl/src/libmpl2mpl.vtable_impl.o obj/src/mpl2mpl/src/libmpl2mpl.class_hierarchy.o || lib/64/libz_maple_host.a
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

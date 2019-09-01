@@ -1,0 +1,30 @@
+defines =
+include_dirs = -I../src/maple_ir/include -I../src/mpl2mpl/include -I../src/maple_util/include -I../src/mempool/include -I../src/huawei_secure_c/include -I../src/maple_ipa/include -I../src/maple_me/include -I../src/maple_phase/include
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -DSTORE_BACK_VTABLE_REF_AFTER_LOAD=1 -std=c++11 -Werror
+target_output_name = libmplir
+
+build obj/src/maple_ir/src/libmplir.global_tables.o: cxx ../src/maple_ir/src/global_tables.cpp
+build obj/src/maple_ir/src/libmplir.intrinsics.o: cxx ../src/maple_ir/src/intrinsics.cpp
+build obj/src/maple_ir/src/libmplir.lexer.o: cxx ../src/maple_ir/src/lexer.cpp
+build obj/src/maple_ir/src/libmplir.mir_builder.o: cxx ../src/maple_ir/src/mir_builder.cpp
+build obj/src/maple_ir/src/libmplir.mir_const.o: cxx ../src/maple_ir/src/mir_const.cpp
+build obj/src/maple_ir/src/libmplir.mir_function.o: cxx ../src/maple_ir/src/mir_function.cpp
+build obj/src/maple_ir/src/libmplir.mir_lower.o: cxx ../src/maple_ir/src/mir_lower.cpp
+build obj/src/maple_ir/src/libmplir.mir_module.o: cxx ../src/maple_ir/src/mir_module.cpp
+build obj/src/maple_ir/src/libmplir.mir_nodes.o: cxx ../src/maple_ir/src/mir_nodes.cpp
+build obj/src/maple_ir/src/libmplir.mir_symbol.o: cxx ../src/maple_ir/src/mir_symbol.cpp
+build obj/src/maple_ir/src/libmplir.mir_type.o: cxx ../src/maple_ir/src/mir_type.cpp
+build obj/src/maple_ir/src/libmplir.opcode_info.o: cxx ../src/maple_ir/src/opcode_info.cpp
+build obj/src/maple_ir/src/libmplir.option.o: cxx ../src/maple_ir/src/option.cpp
+build obj/src/maple_ir/src/libmplir.parser.o: cxx ../src/maple_ir/src/parser.cpp
+build obj/src/maple_ir/src/libmplir.mir_parser.o: cxx ../src/maple_ir/src/mir_parser.cpp
+build obj/src/maple_ir/src/libmplir.mir_pragma.o: cxx ../src/maple_ir/src/mir_pragma.cpp
+build obj/src/maple_ir/src/libmplir.printing.o: cxx ../src/maple_ir/src/printing.cpp
+build obj/src/maple_ir/src/libmplir.bin_mpl_import.o: cxx ../src/maple_ir/src/bin_mpl_import.cpp
+build obj/src/maple_ir/src/libmplir.bin_mpl_export.o: cxx ../src/maple_ir/src/bin_mpl_export.cpp
+
+build lib/64/libmplir.a: alink obj/src/maple_ir/src/libmplir.global_tables.o obj/src/maple_ir/src/libmplir.intrinsics.o obj/src/maple_ir/src/libmplir.lexer.o obj/src/maple_ir/src/libmplir.mir_builder.o obj/src/maple_ir/src/libmplir.mir_const.o obj/src/maple_ir/src/libmplir.mir_function.o obj/src/maple_ir/src/libmplir.mir_lower.o obj/src/maple_ir/src/libmplir.mir_module.o obj/src/maple_ir/src/libmplir.mir_nodes.o obj/src/maple_ir/src/libmplir.mir_symbol.o obj/src/maple_ir/src/libmplir.mir_type.o obj/src/maple_ir/src/libmplir.opcode_info.o obj/src/maple_ir/src/libmplir.option.o obj/src/maple_ir/src/libmplir.parser.o obj/src/maple_ir/src/libmplir.mir_parser.o obj/src/maple_ir/src/libmplir.mir_pragma.o obj/src/maple_ir/src/libmplir.printing.o obj/src/maple_ir/src/libmplir.bin_mpl_import.o obj/src/maple_ir/src/libmplir.bin_mpl_export.o | ../src/deplibs/libmplutil.a
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

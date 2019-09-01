@@ -1,0 +1,13 @@
+defines =
+include_dirs = -I../src/maple_ir/include -I../src/mempool/include -I../src/maple_util/include -I../src/maple_me/include -I../src/maple_ipa/include -I../src/mpl2mpl/include -I../src/maple_phase/include -I../src/huawei_secure_c/include
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -std=c++11 -Werror
+target_output_name = libmplipa
+
+build obj/src/maple_ipa/src/libmplipa.interleaved_manager.o: cxx ../src/maple_ipa/src/interleaved_manager.cpp
+build obj/src/maple_ipa/src/libmplipa.module_phase_manager.o: cxx ../src/maple_ipa/src/module_phase_manager.cpp
+
+build lib/64/libmplipa.a: alink obj/src/maple_ipa/src/libmplipa.interleaved_manager.o obj/src/maple_ipa/src/libmplipa.module_phase_manager.o
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

@@ -1,0 +1,24 @@
+defines =
+include_dirs = -I../src/maple_ir/include -I../src/mempool/include -I../src/huawei_secure_c/include -I../src/maple_me/include -I../src/maple_ipa/include -I../src/mpl2mpl/include -I../src/maple_util/include -I../src/maple_phase/include
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -std=c++11 -Werror
+target_output_name = libmplme
+
+build obj/src/maple_me/src/libmplme.me_alias_class.o: cxx ../src/maple_me/src/me_alias_class.cpp
+build obj/src/maple_me/src/libmplme.me_bb_layout.o: cxx ../src/maple_me/src/me_bb_layout.cpp
+build obj/src/maple_me/src/libmplme.me_cfg.o: cxx ../src/maple_me/src/me_cfg.cpp
+build obj/src/maple_me/src/libmplme.me_dominance.o: cxx ../src/maple_me/src/me_dominance.cpp
+build obj/src/maple_me/src/libmplme.me_emit.o: cxx ../src/maple_me/src/me_emit.cpp
+build obj/src/maple_me/src/libmplme.me_function.o: cxx ../src/maple_me/src/me_function.cpp
+build obj/src/maple_me/src/libmplme.me_irmap.o: cxx ../src/maple_me/src/me_irmap.cpp
+build obj/src/maple_me/src/libmplme.me_option.o: cxx ../src/maple_me/src/me_option.cpp
+build obj/src/maple_me/src/libmplme.me_phase_manager.o: cxx ../src/maple_me/src/me_phase_manager.cpp
+build obj/src/maple_me/src/libmplme.me_rc_lowering.o: cxx ../src/maple_me/src/me_rc_lowering.cpp
+build obj/src/maple_me/src/libmplme.me_ssa.o: cxx ../src/maple_me/src/me_ssa.cpp
+build obj/src/maple_me/src/libmplme.me_ssa_tab.o: cxx ../src/maple_me/src/me_ssa_tab.cpp
+build obj/src/maple_me/src/libmplme.me_ssa_update.o: cxx ../src/maple_me/src/me_ssa_update.cpp
+
+build lib/64/libmplme.a: alink obj/src/maple_me/src/libmplme.me_alias_class.o obj/src/maple_me/src/libmplme.me_bb_layout.o obj/src/maple_me/src/libmplme.me_cfg.o obj/src/maple_me/src/libmplme.me_dominance.o obj/src/maple_me/src/libmplme.me_emit.o obj/src/maple_me/src/libmplme.me_function.o obj/src/maple_me/src/libmplme.me_irmap.o obj/src/maple_me/src/libmplme.me_option.o obj/src/maple_me/src/libmplme.me_phase_manager.o obj/src/maple_me/src/libmplme.me_rc_lowering.o obj/src/maple_me/src/libmplme.me_ssa.o obj/src/maple_me/src/libmplme.me_ssa_tab.o obj/src/maple_me/src/libmplme.me_ssa_update.o
+  arflags =
+  output_extension = .a
+  output_dir = lib/64

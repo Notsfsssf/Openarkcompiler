@@ -1,0 +1,24 @@
+defines =
+include_dirs = -I../src/maple_ir/include -I../src/mempool/include -I../src/huawei_secure_c/include -I../src/maple_me/include -I../src/maple_ipa/include -I../src/mpl2mpl/include -I../src/maple_util/include -I../src/maple_phase/include
+cflags =
+cflags_cc = -O3 -Wall -fstack-protector-strong -fPIC -fPIE -m64 -DDYNAMICLANG -DRC_NO_MMAP -DMIR_FEATURE_FULL=1 -DMIR_JAVA=1 -std=c++11 -Werror
+target_output_name = libmplmewpo
+
+build obj/src/maple_me/src/libmplmewpo.alias_analysis_table.o: cxx ../src/maple_me/src/alias_analysis_table.cpp
+build obj/src/maple_me/src/libmplmewpo.alias_class.o: cxx ../src/maple_me/src/alias_class.cpp
+build obj/src/maple_me/src/libmplmewpo.bb.o: cxx ../src/maple_me/src/bb.cpp
+build obj/src/maple_me/src/libmplmewpo.dominance.o: cxx ../src/maple_me/src/dominance.cpp
+build obj/src/maple_me/src/libmplmewpo.func_emit.o: cxx ../src/maple_me/src/func_emit.cpp
+build obj/src/maple_me/src/libmplmewpo.irmap.o: cxx ../src/maple_me/src/irmap.cpp
+build obj/src/maple_me/src/libmplmewpo.irmap_emit.o: cxx ../src/maple_me/src/irmap_emit.cpp
+build obj/src/maple_me/src/libmplmewpo.me_ir.o: cxx ../src/maple_me/src/me_ir.cpp
+build obj/src/maple_me/src/libmplmewpo.orig_symbol.o: cxx ../src/maple_me/src/orig_symbol.cpp
+build obj/src/maple_me/src/libmplmewpo.ssa.o: cxx ../src/maple_me/src/ssa.cpp
+build obj/src/maple_me/src/libmplmewpo.ssa_mir_nodes.o: cxx ../src/maple_me/src/ssa_mir_nodes.cpp
+build obj/src/maple_me/src/libmplmewpo.ssa_tab.o: cxx ../src/maple_me/src/ssa_tab.cpp
+build obj/src/maple_me/src/libmplmewpo.ver_symbol.o: cxx ../src/maple_me/src/ver_symbol.cpp
+
+build /var/OpenArkCompiler/out/lib/libmplmewpo.a: alink obj/src/maple_me/src/libmplmewpo.alias_analysis_table.o obj/src/maple_me/src/libmplmewpo.alias_class.o obj/src/maple_me/src/libmplmewpo.bb.o obj/src/maple_me/src/libmplmewpo.dominance.o obj/src/maple_me/src/libmplmewpo.func_emit.o obj/src/maple_me/src/libmplmewpo.irmap.o obj/src/maple_me/src/libmplmewpo.irmap_emit.o obj/src/maple_me/src/libmplmewpo.me_ir.o obj/src/maple_me/src/libmplmewpo.orig_symbol.o obj/src/maple_me/src/libmplmewpo.ssa.o obj/src/maple_me/src/libmplmewpo.ssa_mir_nodes.o obj/src/maple_me/src/libmplmewpo.ssa_tab.o obj/src/maple_me/src/libmplmewpo.ver_symbol.o
+  arflags =
+  output_extension = .a
+  output_dir = /var/OpenArkCompiler/out/lib
